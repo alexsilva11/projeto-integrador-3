@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "sequelize-cli db:migrate sequelize-cli db:seed:all nodemon ./bin/www"
   },
   "dependencies": {
     "bcrypt": "^4.0.1",
