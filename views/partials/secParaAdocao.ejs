@@ -5,14 +5,14 @@
             <div class="carousel-item active">
                 <div class="row">
                     <% for( let i = 1; i <= 6; i++) {%>
-                        <div class="col-md-2 col-12 px-1">
+                        <div class="col-md-2 col-12 px-1 py-2">
                             <a href="/pet/detalheAdocao?id=<%=pets[ i - 1].id%>" class="text-decoration-none text-blue">
                                 <div class="card" style="width: auto;">
                                     <img src="<%=pets[i -1].get().imagem[0].dataValues.imagem%>"
                                         class="card-img-top" alt="Nome do produto">
                                     <div class="card-body">
                                         <h5 class="card-title text-truncate" id="nomePet"><%=pets[i -1].nome%></h5>
-                                        <p class="card-text" id="precoProduto"><%=pets[i -1].raca%></p>
+                                        <p class="card-text text-truncate" id="racaPet"><%=pets[i -1].raca%></p>
                                     </div>
                                 </div>
                             </a>
@@ -24,14 +24,14 @@
                 <div class="carousel-item">
                     <div class="row">
                         <% for( let i = 7; i <= 12; i++) {%>
-                            <div class="col-md-2 col-12 px-1">
+                            <div class="col-md-2 col-12 px-1 py-2">
                                 <a href="/pet/detalheAdocao?id=<%=pets[ i - 1].id%>" class="text-decoration-none text-blue">
                                     <div class="card" style="width: auto;">
                                         <img src="<%=pets[i -1].get().imagem[0].dataValues.imagem%>"
                                             class="card-img-top" alt="Nome do produto">
                                         <div class="card-body">
                                             <h5 class="card-title text-truncate" id="nomePet"><%=pets[i -1].nome%></h5>
-                                            <p class="card-text" id="precoProduto"><%=pets[i -1].raca%></p>
+                                            <p class="card-text text-truncate" id="racaPet"><%=pets[i -1].raca%></p>
                                         </div>
                                     </div>
                                 </a>
@@ -44,14 +44,14 @@
                 <div class="carousel-item">
                     <div class="row">
                         <% for( let i = 13; i <= 18; i++) {%>
-                            <div class="col-md-2 col-12 px-1">
+                            <div class="col-md-2 col-12 px-1 py-2">
                                 <a href="/pet/detalheAdocao?id=<%=pets[ i - 1].id%>" class="text-decoration-none text-blue">
                                     <div class="card" style="width: auto;">
                                         <img src="<%=pets[i -1].get().imagem[0].dataValues.imagem%>"
                                             class="card-img-top" alt="Nome do produto">
                                         <div class="card-body">
                                             <h5 class="card-title text-truncate" id="nomePet"><%=pets[i -1].nome%></h5>
-                                            <p class="card-text" id="precoProduto"><%=pets[i -1].raca%></p>
+                                            <p class="card-text text-truncate" id="racaPet"><%=pets[i -1].raca%></p>
                                         </div>
                                     </div>
                                 </a>

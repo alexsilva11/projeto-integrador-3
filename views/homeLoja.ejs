@@ -8,8 +8,7 @@
                 aria-label="Menu de categorias">
                 <i class="fas fa-bars text-blue mr-2"></i>Categorias
             </button>
-            <a class="nav-link nav-item py-0 text-decoration-none text-blue d-none d-sm-block"
-                href="#"> <i class="fas fa-bars text-blue mr-1"><strong class="ml-2">Categorias</strong></i> </a>
+            <span class="text-blue"><strong class="ml-2">Categorias</strong></span>
 
             <div class="container collapse navbar-collapse text-blue" id="myNavbarCategorias">
                 <div class="navbar-nav row">
@@ -24,14 +23,14 @@
 </section>
 
 <section id="featured" class="mb-3">
-    <div class="container">
+    <div class="container p-0">
         <div class="h3 text-blue">Destaques</div>
         <div id="carouselStoreDeals" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row rowDestaques">
+                <div class="carousel-item px-3 active">
+                    <div class="row">
                         <% for( let i = 1; i <= 6; i++) {%>
-                            <div class="col-md-2 col-12 px-1">  
+                            <div class="col-md-2 col-12 px-1 py-2">  
                                 <a href="/produto/detalheProduto?id=<%=destaques[ i - 1].id%>" class="text-decoration-none text-blue">
                                     <div class="card" style="width: auto;">
                                         <img src="<%=destaques[i -1].get().imagem[0].imagem%>"
@@ -46,10 +45,10 @@
                         <%}%>
                     </div>
                 </div>
-                    <div class="carousel-item">
-                        <div class="row rowDestaques">
+                    <div class="carousel-item px-3">
+                        <div class="row">
                             <% for( let i = 7; i <= 12; i++) {%>
-                                <div class="col-md-2 col-12 px-1">  
+                                <div class="col-md-2 col-12 px-1 py-2">  
                                     <a href="/produto/detalheProduto?id=<%=destaques[ i - 1].id%>" class="text-decoration-none text-blue">
                                         <div class="card" style="width: auto;">
                                             <img src="<%=destaques[i -1].get().imagem[0].imagem%>"
@@ -64,10 +63,10 @@
                             <%}%>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="row rowDestaques">
+                    <div class="carousel-item px-3">
+                        <div class="row">
                             <% for( let i = 13; i <= 18; i++) {%>
-                                <div class="col-md-2 col-12 px-1">  
+                                <div class="col-md-2 col-12 px-1 py-2">  
                                     <a href="/produto/detalheProduto?id=<%=destaques[ i - 1].id%>" class="text-decoration-none text-blue">
                                         <div class="card" style="width: auto;">
                                             <img src="<%=destaques[i -1].get().imagem[0].imagem%>"
@@ -106,7 +105,7 @@
                 <div class="h3 text-blue">Novos na loja</div>
                 <div class="row justify-content-center">
                     <% for (let i = 0; i <=5; i++) {%>
-                    <div class="col-md-2 col-12 px-1">
+                    <div class="col-md-2 col-12 px-1 py-2">
                         <a href="/produto/detalheProduto?id=<%=itens[(itens.length -1) - i].id%>" class="text-decoration-none text-blue">
                             <div class="card tamanho">
                                 <img id="imagemProduto" src="<%=itens[(itens.length -1) - i].get().imagem[0].imagem%>" id="imagemProduto" class="card-img-top" alt="Nome do produto">
@@ -118,9 +117,7 @@
                         </a>
                     </div>
                     <%}%>
-                </div>
-                            
-            
+                </div>   
         </div>
     </section><!-- deals -->
 

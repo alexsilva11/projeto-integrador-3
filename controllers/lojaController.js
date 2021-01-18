@@ -26,6 +26,11 @@ const lojaController = {
         let usuario = req.session.usuario;
         let carrinho = undefined
         const itens = await Produto.findAll({
+            where: {
+                ativo: {
+                    [Op.ne]: false
+                }
+            },
             include: [{
                 model: ImagemProduto,
                 as: "imagem",
@@ -34,6 +39,11 @@ const lojaController = {
         });
 
         let destaques = await Produto.findAll({
+            where: {
+                ativo: {
+                    [Op.ne]: false
+                }
+            },
             include: [{
                 model: ImagemProduto,
                 as: "imagem",
@@ -175,6 +185,9 @@ const lojaController = {
         let { page = 1 } = req.query;
 
         let condTotal = {
+            ativo: {
+                [Op.ne]: false // adicionado condição ativo para não trazer itens dasativados na pesquisa
+            },
             ...condIdProdu,
             ...condPreco,
             ...condMarca,
@@ -195,9 +208,6 @@ const lojaController = {
             queryAtual = queryAtual.replace("&page="+page,"")
         }
 
-        if(queryAtual.indexOf('marca') > -1){
-            queryAtual = '/categoriaProduto?id=' + id
-        }
 
 
         let categoriaPetAll = await CategoriaPet.findAll({
@@ -324,7 +334,11 @@ const lojaController = {
             categoria_pet_id: id
         }
 
+        
         let condTotal = {
+            ativo: {
+                [Op.ne]: false // adicionado condição ativo para não trazer itens dasativados na pesquisa
+            },
             ...condPreco,
             ...condIdCateProduto,
             ...condIdCatePet
@@ -545,7 +559,10 @@ const lojaController = {
         if(carrinho.length > 0){
         relacionados = await Produto.findAll({
             where: {
-                categoria_pet_id: carrinho[0].produto.categoria_pet_id
+                categoria_pet_id: carrinho[0].produto.categoria_pet_id,
+                ativo: {
+                    [Op.ne]: false
+                }
             },
             include: ['imagem']
         })

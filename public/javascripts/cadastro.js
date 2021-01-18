@@ -3,7 +3,8 @@ let upload = document.querySelector('#image-selector'),
     result = document.querySelector("#canvas"),
     save = document.querySelector("#pronto"),
     preview = document.querySelector("#image-preview"),
-    cropper = "";
+    cropper = "",
+    modal = document.querySelector(".modal");
 
 // on change show image with crop options
 upload.addEventListener("change", (e) => {
@@ -24,8 +25,9 @@ upload.addEventListener("change", (e) => {
                 cropper = new Cropper(img, {
                     aspectRatio: 1,
                     dragMode: 'move',
-                    minContainerWidth: 400,
-                    minContainerHeight: 400,
+                    viewMode: 2,
+                    minContainerWidth: 300,
+                    minContainerHeight: 300,
                 });
             }
         };
@@ -42,3 +44,7 @@ save.addEventListener('click', (e) => {
     preview.src = imgSrc;
     document.getElementById('imagemb64').value = imgSrc;
 });
+
+upload.addEventListener('click', (e) => {
+    upload.value = "";
+})

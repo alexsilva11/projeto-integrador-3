@@ -227,7 +227,7 @@ h2 {
     }
 
     .carousel {
-        height: 300px;
+        height: 320px;
     }
 
     .carousel-inner {
@@ -243,7 +243,10 @@ h2 {
         margin: 5px auto;
     }
 }
-
+.row {
+    margin-left: 5px;
+    margin-right: 5px;
+}
 @media (max-width: 480px) {
 
     .btn-adocao {
@@ -258,7 +261,7 @@ h2 {
         position: absolute;
         font-size: 0.8rem;
         width: 4rem;
-        margin-top: 12rem;
+        margin-top: 11.5rem;
         margin-left: -16rem;
     }
 
@@ -286,11 +289,11 @@ h2 {
     }
 
     .carousel {
-        height: 250px;
+        height: 450px;
     }
 
     .carousel-inner {
-        height: 250px;
+        height: 100%;
     }
 
     .hidden {
@@ -298,7 +301,7 @@ h2 {
     }
 
     .card-img-top {
-        width: 40%;
+        width: 100%;
         margin: 5px auto;
     }
 }

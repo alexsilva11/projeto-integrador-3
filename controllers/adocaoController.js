@@ -34,6 +34,7 @@ const adocaoController = {
         let pets = await Pet.findAll({
             where: {
                 categoria_pet_id,
+                adotado: 0,
                 ativo: {
                     [Op.ne]: false
                 }
@@ -61,7 +62,13 @@ const adocaoController = {
     home: async (req, res) => {
         let usuario = req.session.usuario;
         let carrinho = undefined
-        let categorias = await CategoriaPet.findAll()
+        let categorias = await CategoriaPet.findAll({
+            where: {
+                id: {
+                    [Op.ne]: 8
+                  }
+            }
+        })
         let pets = await Pet.findAll({
             where: {
                 adotado: 0,
